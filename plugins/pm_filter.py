@@ -143,10 +143,10 @@ async def advantage_spoll_choker(bot, query):
         files, offset, total_results = await get_search_results(movie, offset=0, filter=True)
         if files:
             k = (movie, files, offset, total_results)
-            await auto_filter(bot, query, k)
+            await auto_filter(bot, query, k, h)
         else:
             k = await query.message.edit("<b><i>Movie Not available Reason\n\n1)O.T.T Or DVD Not Released\n\n2)Type Name With Year\n\n3)Movie Is Not Available in the database contact Admin</i></b>"),
-            keyboard = [ [InlineKeyboardButton("⚡ ᴊᴏɪɴ ɢʀᴏᴜᴘ ⚡", url="https://t.me/Cinemahub182") ] ]
+            h=keyboard = [ [InlineKeyboardButton("⚡ ᴊᴏɪɴ ɢʀᴏᴜᴘ ⚡", url="https://t.me/Cinemahub182") ] ]
             reply_markup = InlineKeyboardMarkup(keyboard)
             await asyncio.sleep(20)
             await k.delete()
