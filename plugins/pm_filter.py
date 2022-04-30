@@ -620,10 +620,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ]
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_reply_markup(reply_markup)
-                elif query.data == 'reqst1':
-                await query.answer("Hey Bro 😍\n\nᴄʟɪᴄᴋ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ\nᴛʜᴇɴ ꜱᴛᴀʀᴛ ᴛʜᴇ ʙᴏᴛ",True)
-    try: await query.answer('Piracy Is Crime')
-    except: pass
+            elif query.data == 'reqst1':
+            await query.answer("Hey Bro 😍\n\n🎯 Click On The Button below The Files You Want And Start The Bot ⬇️", True)
+            try: await query.answer('Piracy Is Crime')
+            except: pass
 
 
 async def auto_filter(client, msg, spoll=False):
