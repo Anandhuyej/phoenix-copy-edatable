@@ -82,13 +82,18 @@ async def next_page(bot, query):
             ]
             for file in files
         ]
+        btn.insert(0, 
+        [
+            InlineKeyboardButton(f'🎬 {search} 🎬', 'reqst1')
+        ]
+    )
 
-    if 0 < offset <= 10:
+    if 0 < offset <= 6:
         off_set = 0
     elif offset == 0:
         off_set = None
     else:
-        off_set = offset - 10
+        off_set = offset - 6
     if n_offset == 0:
         btn.append(
             
@@ -615,7 +620,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ]
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_reply_markup(reply_markup)
-    await query.answer('Piracy Is Crime')
+                elif query.data == 'reqst1':
+                await query.answer("Hey Bro 😍\n\nᴄʟɪᴄᴋ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ\nᴛʜᴇɴ ꜱᴛᴀʀᴛ ᴛʜᴇ ʙᴏᴛ",True)
+    try: await query.answer('Piracy Is Crime')
+    except: pass
 
 
 async def auto_filter(client, msg, spoll=False):
